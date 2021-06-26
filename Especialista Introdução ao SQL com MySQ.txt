@@ -1,0 +1,42 @@
+Introdução ao SQL com MySQL: Manipule e consulte dados
+
+
+
+Cenário:
+
+Somos muitos alunos e alunas aqui no Bootcamp. Em função de todas as avaliações respondidas, muitos dados são gerados. E agora temos alguns desafios para você:
+
+
+Dado que todo(a) aluno(a) tem um email (máximo de 30 caracteres),nome (máximo de 30 caracteres) e idade (entre 1 e 100). O que você faria para representar essa estrutura no banco?
+O que você precisa fazer agora para inserir novos(as) alunos(as) nessa tabela?
+E para listar tudo que está registrado?
+E para apagar um registro pelo email?
+Agora você precisa buscar todos os(as) alunos(as) que tem Zup no email. Como você faria?
+E para fechar é necessário que alunos e alunas sejam listados pela sua idade em ordem crescente.
+
+
+
+O que seria bom ver nessa resposta?
+
+
+
+Peso 1: Create table com os campos necessários para representar alunos(as) no banco de dados da aplicação.
+Peso 1: Utilização do insert para inserir dados
+Peso 2: Campos com tipos corretos e pensados para o tamanho
+Peso 2: Utilização do delete com o where correto
+Peso 2: Utilização do select com o like
+Peso 2: Utilização do select com o order by
+
+
+Resposta do Especialista:
+
+Objetivo de aprendizado: Criar uma tabela com create table com nome alunos definindo os campos de nome, email e idade.
+Motivo da escolha: Utilizo aqui o create table que é o comando necessário para criar novas tabelas no banco de dados.
+Definir os campos para nome e email como varchar com o limite de caracteres necessário.
+Motivo da escolha: Para o campo idade eu preciso definir um inteiro com um range que faça sentido. No mysql existe o Tinyint que parece adequado.
+Também defino uma chave primária auto gerada pelo banco. Poderia usar o email como chave natural, mas as numéricas tendem a ser mais fáceis de serem trabalhadas dentro da aplicação e indexadas pelo banco.
+Para inserir eu vou usar o comando insert passando apenas nome, email e idade já que o id vai ser auto gerado.
+Para o “delete” eu vou usar o where pelo email, para apagar apenas o registro correto.
+Para a seleção com emails Zup vou usar o like e os caracteres especiais de busca. Algo como where email like '%@zup.com.br%'
+Para listar pela idade crescente, vou usar o select com order by pela idade asc.
+
